@@ -28,7 +28,7 @@ public class ItunesServiceTest {
 	
 	@Test(expectedExceptions=ItunesServiceException.class)
 	public void validateBadRequest() throws ItunesInputValidationException, ItunesServiceException{
-		ItunesServiceInvoker.invoke("Michael+Jackson", 5, "US", "Music");
+		ItunesServiceInvoker.invoke("Michael Jackson", 5, "US", "Music");
 	}
 	
 	
