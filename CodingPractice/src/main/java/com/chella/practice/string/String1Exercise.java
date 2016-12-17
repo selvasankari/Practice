@@ -9,6 +9,10 @@ public class String1Exercise {
 	{
 	 String1Exercise s = new String1Exercise();
 	 s.helloName("cc");
+	 
+	 String test="chellacc";
+	 System.out.println(test.indexOf('c',0));
+	 
 	
 	}
 	

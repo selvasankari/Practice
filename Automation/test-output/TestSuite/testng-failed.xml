@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [TestSuite]">
+  <test name="sample test suite(failed)">
+    <classes>
+      <class name="com.chella.automation.testng.FirstTestNGFile">
+        <methods>
+          <include name="verifyHomePageTitle"/>
+        </methods>
+      </class> <!-- com.chella.automation.testng.FirstTestNGFile -->
+    </classes>
+  </test> <!-- sample test suite(failed) -->
+</suite> <!-- Failed suite [TestSuite] -->

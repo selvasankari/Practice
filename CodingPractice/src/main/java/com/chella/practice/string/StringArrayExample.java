@@ -8,6 +8,8 @@ public class StringArrayExample {
 	      // declare a string array with initial size
 
 	      String[] schoolbag = new String[4];
+	      String[] ex = new String[2];
+	      String[] ex1 = new String[1];
 
 	 
 

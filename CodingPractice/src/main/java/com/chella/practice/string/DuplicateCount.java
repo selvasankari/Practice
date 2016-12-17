@@ -6,7 +6,7 @@ public class DuplicateCount {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int [] array = {1,3,3,4,4,6,6,6,3,3,4,5,5,9};
+		int [] array = {4,5,4,5,5};
 		int temp,i,j,k=0;
 		int dup_count=0;
 		Arrays.sort(array);
@@ -39,8 +39,12 @@ public class DuplicateCount {
 					dup_count++;
 					//System.out.println(dup_count);
 							continue;
-				}						
+				}	
+				if(dup_count>0)
+				{
 				d.dupcount(dup_count, array[i]);
+				dup_count=0;
+				}
 			}
 		d.dupcount(dup_count, array[i]);
 	

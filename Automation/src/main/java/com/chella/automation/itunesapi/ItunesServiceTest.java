@@ -5,6 +5,7 @@ package com.chella.automation.itunesapi;
 
 import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -35,6 +36,7 @@ public class ItunesServiceTest {
 	@Test
 	public void validateResponse() throws ItunesInputValidationException, ItunesServiceException{
 		int actualLimit = 5;
+		Logger log;
 		
 		ItunesResponse itunesResponse = ItunesServiceInvoker.invoke("Michael+Jackson", actualLimit, "US", "music");
 		//Checking the data is not null
@@ -52,6 +54,8 @@ public class ItunesServiceTest {
 			Assert.assertEquals("Michael Jackson", result.getArtistName());
 			//Checking MediaType
 			Assert.assertTrue(result.getpreviewUrl().contains("Music"));
+			log=Logger.getLogger(ItunesServiceTest.class);
+			log.info("Media type ");
 			
 		}
 		

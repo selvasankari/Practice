@@ -29,7 +29,7 @@ public class ReadExcel {
 		
 		ReadExcel objreadexcel = new ReadExcel();
 		
-		String filePath= "C:\\workspace\\Selenium\\myproject\\src\\testData.xls";
+		String filePath= "C:\\GitRepo\\Practice\\Automation\\src\\main\\java\\com\\chella\\automation\\selenium\\testData.xls";
 		objreadexcel.writeExcel(filePath, "testData.xls", "Data");
 		objreadexcel.readExcel(filePath, "testData.xls", "Data");
 		

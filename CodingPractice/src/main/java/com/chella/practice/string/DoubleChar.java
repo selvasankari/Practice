@@ -1,294 +1,371 @@
 package com.chella.practice.string;
 
 public class DoubleChar {
-	
-	public static void main(String args[])
-	{
-		DoubleChar dc= new DoubleChar();
-		// doubleChar 
-		//String s = dc.doubleChar("the");
-		//System.out.println(s);
-		
-		//dc.bobThere("b12b1b");
-		boolean a =dc.xyBalance("xaxxbbyx");
+
+	public static void main(String args[]) {
+		DoubleChar dc = new DoubleChar();
+		// doubleChar
+		// String s = dc.doubleChar("the");
+		// System.out.println(s);
+
+		// dc.bobThere("b12b1b");
+		boolean a = dc.xyBalance("xaxxbbyx");
 		System.out.println(a);
+
+		String s = dc.repeatFront("Choclate", 4);
+		System.out.println(s);
 	}
 
-	/*Given a string, return a string where for every char in the original, there are two chars.
-     doubleChar("The")  "TThhee"
-	 doubleChar("AAbb")  "AAAAbbbb"
-	 doubleChar("Hi-There")  "HHii--TThheerree" */
+	/*
+	 * Given a string, return a string where for every char in the original,
+	 * there are two chars. doubleChar("The") "TThhee" doubleChar("AAbb")
+	 * "AAAAbbbb" doubleChar("Hi-There") "HHii--TThheerree"
+	 */
 	public String doubleChar(String str) {
-		if(str==null)
-		{
-		return "";
+		if (str == null) {
+			return "";
 		}
 
-		int size= str.length();
-		String s="";
-		for(int i=0; i<size;i++)
-		{
-		//s= s+str.substring(i, i+1)+str.substring(i, i+1);
-		s= s+str.charAt(i)+str.charAt(i);
+		int size = str.length();
+		String s = "";
+		for (int i = 0; i < size; i++) {
+			// s= s+str.substring(i, i+1)+str.substring(i, i+1);
+			s = s + str.charAt(i) + str.charAt(i);
 		}
 		System.out.println(s);
 		return s;
-		}
+	}
 
-	/** Return the number of times that the string "hi" appears anywhere in the given string.
+	/**
+	 * Return the number of times that the string "hi" appears anywhere in the
+	 * given string.
+	 * 
+	 * countHi("abc hi ho") 1 countHi("ABChi hi") 2 countHi("hihi") 2
+	 */
 
-countHi("abc hi ho")  1
-countHi("ABChi hi") 2
-countHi("hihi")  2*/
-	
 	public int countHi(String str) {
 
-		if(str==null)
-		return 0;
+		if (str == null)
+			return 0;
 
-		int size= str.length();
-		int count =0;
+		int size = str.length();
+		int count = 0;
 
-		for(int i=0; i<size-1; i=i+1)
-		{
-		if(str.substring(i,i+2) .equals("hi"))
-		count++;
+		for (int i = 0; i < size - 1; i = i + 1) {
+			if (str.substring(i, i + 2).equals("hi"))
+				count++;
 		}
 		return count;
-		  
-		}
-	
-	public boolean endOther(String a, String b) {
-		 a= a.toLowerCase();
-		 b=b.toLowerCase();
 
-		int a_len =a.length();
-		int b_len =b.length();
-
-		if(a_len>b_len)
-		{
-		if(a.endsWith(b))
-		return true;
-		}
-		else
-		{	if(b.endsWith(a))
-			return true;
-		}
-			
-		  return false;
-		}
-	/** Return true if the given string contains an appearance of "xyz" where the xyz is not directly preceeded by a period (.). So "xxyz" counts but "x.xyz" does not.
-
-xyzThere("abcxyz")  true
-xyzThere("abc.xyz") false
-xyzThere("xyz.abc")  true */
-	
-	public boolean xyzThere(String str) {
-	    if (str.length() >= 3) {
-	        if (str.substring(0,3).equals("xyz")) return true;
-	        for (int i = 0; i < str.length()-3; i++)
-	            if (str.substring(i+1, i+4).equals("xyz") && 
-	                    str.charAt(i) != '.')
-	                return true;
-	    }
-	    return false;
 	}
-	
-	
+
+	public boolean endOther(String a, String b) {
+		a = a.toLowerCase();
+		b = b.toLowerCase();
+
+		int a_len = a.length();
+		int b_len = b.length();
+
+		if (a_len > b_len) {
+			if (a.endsWith(b))
+				return true;
+		} else {
+			if (b.endsWith(a))
+				return true;
+		}
+
+		return false;
+	}
+
+	/**
+	 * Return true if the given string contains an appearance of "xyz" where the
+	 * xyz is not directly preceeded by a period (.). So "xxyz" counts but
+	 * "x.xyz" does not.
+	 * 
+	 * xyzThere("abcxyz") true xyzThere("abc.xyz") false xyzThere("xyz.abc")
+	 * true
+	 */
+
+	public boolean xyzThere(String str) {
+		if (str.length() >= 3) {
+			if (str.substring(0, 3).equals("xyz"))
+				return true;
+			for (int i = 0; i < str.length() - 3; i++)
+				if (str.substring(i + 1, i + 4).equals("xyz")
+						&& str.charAt(i) != '.')
+					return true;
+		}
+		return false;
+	}
+
 	public boolean bobThere(String str) {
 
 		int size = str.length();
-		if(size==3)
-		{ if((str.charAt(0) == 'b') && (str.charAt(2) =='b'))
-			
-		  return true;
-		 }
+		if (size == 3) {
+			if ((str.charAt(0) == 'b') && (str.charAt(2) == 'b'))
 
-		for(int i=0; i<size-2;i++)
-		{ 
-		  if((str.charAt(i) == 'b') && (str.charAt(i+2) =='b'))
-			  System.out.println(i+ str.charAt(i)+ str.charAt(i+2));
-		  return true;
+				return true;
+		}
+
+		for (int i = 0; i < size - 2; i++) {
+			if ((str.charAt(i) == 'b') && (str.charAt(i + 2) == 'b'))
+				System.out.println(i + str.charAt(i) + str.charAt(i + 2));
+			return true;
 
 		}
 		return false;
-		  
-		}
 
-	
+	}
+
 	public boolean xyBalance(String str) {
+		// xaxxbbyx
 		int len = str.length();
-                boolean flag=false;
-		if(len<2)
-		return false;
-		if((len == 2) && (str.charAt(0) == 'x') && (str.charAt(1) =='y'))
-		return true;
-		int xposition=0; int ypositon=0;
+		boolean flag = false;
+		if (len < 2)
+			return false;
+		if ((len == 2) && (str.charAt(0) == 'x') && (str.charAt(1) == 'y'))
+			return true;
+		int xposition = 0;
+		int ypositon = 0;
 
-for(int i=0;i<len-1; i++)
-{
-	System.out.println("ivalue" +i);
-	System.out.println(str.charAt(i));
-	System.out.println(flag);
-  if(str.charAt(i)=='x')
-  {
-	  xposition =i;
- 	 System.out.println("xposition " +xposition);
-    if(flag ==true && xposition >ypositon)
-    {
-    	System.out.println(flag);
-     flag= false;
-      break;
-     }
-    //xaxxbbyx
-     for(int j=i+1; j<len; j++)
-     {
-    	 System.out.println( "jvalue "+j);
-    		System.out.println(str.charAt(j));
-       if(str.charAt(j) =='y')
-       {
-    	   ypositon=j;
-    	   System.out.println("yposition " + ypositon);
-    	   System.out.println(flag);
-         flag =true;
-        }
-     }
-   }  
-}
-if(str.charAt(len-1)=='x')
-{
-	return false;
-}
+		for (int i = 0; i < len - 1; i++) {
+			System.out.println("ivalue" + i);
+			System.out.println(str.charAt(i));
+			System.out.println(flag);
+			if (str.charAt(i) == 'x') {
+				xposition = i;
+				System.out.println("xposition " + xposition);
+				if (flag == true && xposition > ypositon) {
+					System.out.println(flag);
+					flag = false;
+					break;
+				}
+				// xaxxbbyx
+				for (int j = i + 1; j < len; j++) {
+					System.out.println("jvalue " + j);
+					System.out.println(str.charAt(j));
+					if (str.charAt(j) == 'y') {
+						ypositon = j;
+						System.out.println("yposition " + ypositon);
+						System.out.println(flag);
+						flag = true;
+					}
+				}
+			}
+		}
+		if (str.charAt(len - 1) == 'x') {
+			return false;
+		}
 
-return flag;
+		return flag;
 
-/**int lastX = str.lastIndexOf("y");
-    int lastY = str.lastIndexOf("x");
-    if (lastX == -1 && lastY == -1) return true;
-    return (lastX > lastY);*/
+		/**
+		 * int lastX = str.lastIndexOf("y"); int lastY = str.lastIndexOf("x");
+		 * if (lastX == -1 && lastY == -1) return true; return (lastX > lastY);
+		 */
+		
+		
+		
+	}
+	public boolean xyBalance1(String str) {
+	    boolean y = false;
+	    for(int i = str.length() - 1; i >= 0; i--) {
+	        if(str.charAt(i) == 'y')
+	            y = true;
+	                    
+	        if(str.charAt(i) == 'x' && !y)
+	            return false;
+	    }
+	                                  
+	    return true;
+	}
 
-}
-	/**Given two strings, A and B, create a bigger string made of the first char of A, the first char of B, the second char of A, the second char of B, and so on. Any leftover chars go at the end of the result.
+	/**
+	 * Given two strings, A and B, create a bigger string made of the first char
+	 * of A, the first char of B, the second char of A, the second char of B,
+	 * and so on. Any leftover chars go at the end of the result.
+	 * 
+	 * mixString("abc", "xyz") "axbycz" mixString("Hi", "There") "HTihere"
+	 * mixString("xxxx", "There") "xTxhxexre"
+	 **/
 
-mixString("abc", "xyz")  "axbycz"
-mixString("Hi", "There")  "HTihere"
-mixString("xxxx", "There") "xTxhxexre" **/
-	
 	public String mixString(String a, String b) {
 		int alen = a.length();
 		int blen = b.length();
 		int i;
+System.out.println("mix strings");
+		int len = 0;
+		if ((a == "" && b == "") || (a == "") || (b == ""))
+			return a + b;
 
-		int len=0;
-		if((a=="" && b== "") || (a=="") ||(b==""))
-		return a+b;
-
-		if(alen>blen)
-		{
-		len =blen;
+		
+		String s = "";
+		for (i = 0; i < alen && i<blen; i++) {
+			s = s + a.charAt(i) + b.charAt(i);
 		}
+
+		if (alen > blen)
+			s = s + a.substring(i);
 		else
-		{
-		len =alen;
-		}
-		String s ="";
-		for( i=0;i<len; i++)
-		{
-		s=s+a.charAt(i) + b.charAt(i);
-		}
+			s = s + b.substring(i);
 
-		if(alen>blen)
-		s=s+a.substring(i);
-		else
-		s=s+b.substring(i);
+		return s;
+	}
 
-		return s;  
-		}
-	
-	/** String res = "";
-    for (int i = 0; i < Math.min(a.length(), b.length()); i++)
-        res += "" + a.charAt(i) + b.charAt(i);
-    if (a.length() > b.length())
-        return res + a.substring(b.length());
-    return res + b.substring(a.length());*/
-	
-	/**Given a string and an int N, return a string made of N repetitions of the last N characters of the string. You may assume that N is between 0 and the length of the string, inclusive.
+	/**
+	 * String res = ""; for (int i = 0; i < Math.min(a.length(), b.length());
+	 * i++) res += "" + a.charAt(i) + b.charAt(i); if (a.length() > b.length())
+	 * return res + a.substring(b.length()); return res +
+	 * b.substring(a.length());
+	 */
 
-repeatEnd("Hello", 3) "llollollo"
-repeatEnd("Hello", 2) "lolo"
-repeatEnd("Hello", 1) "o"*/
-	
+	/**
+	 * Given a string and an int N, return a string made of N repetitions of the
+	 * last N characters of the string. You may assume that N is between 0 and
+	 * the length of the string, inclusive.
+	 * 
+	 * repeatEnd("Hello", 3) "llollollo" repeatEnd("Hello", 2) "lolo"
+	 * repeatEnd("Hello", 1) "o"
+	 */
+
 	public String repeatEnd(String str, int n) {
 
-		String result="";
-		if(str== null)
-		return str;
-		 for(int i=0; i<n;i++)
-		 {
-		 result = result +str.substring(str.length()-n);
-		 }
-		 return result;
-		  
-		}
-	/**Given a string and an int n, return a string made of the first n characters of the string, followed by the first n-1 characters of the string, and so on. You may assume that n is between 0 and the length of the string, inclusive (i.e. n >= 0 and n <= str.length()).
-
-repeatFront("Chocolate", 4)  "ChocChoChC"
-repeatFront("Chocolate", 3)  "ChoChC"
-repeatFront("Ice Cream", 2)  "IcI"*/
-	
-	public String repeatFront(String str, int n) {
-
-		String res= "";
-		if(str=="")
-		return str;
-
-		for(int i=n; i>=0; i--)
-		{
-		res= res+str.substring(0,i);
-		}
-		return res;
-		  
-		}
-	/**Given two strings, word and a separator, return a big string made of count occurences of the word, separated by the separator string.
-
-repeatSeparator("Word", "X", 3)  "WordXWordXWord"
-repeatSeparator("This", "And", 2)  "ThisAndThis"
-repeatSeparator("This", "And", 1)  "This"*/
-	
-	public String repeatSeparator(String word, String sep, int count) {
 		String result = "";
-		for(int i = 0; i < count; i++) {
-		if(i + 1 == count) {
-		result += word;
-		} else {
-		result += (word + sep);
-		}
+		if (str == null)
+			return str;
+		for (int i = 0; i < n; i++) {
+			result = result + str.substring(str.length() - n);
 		}
 		return result;
+
+	}
+
+	/**
+	 * Given a string and an int n, return a string made of the first n
+	 * characters of the string, followed by the first n-1 characters of the
+	 * string, and so on. You may assume that n is between 0 and the length of
+	 * the string, inclusive (i.e. n >= 0 and n <= str.length()).
+	 * 
+	 * repeatFront("Chocolate", 4) "ChocChoChC" repeatFront("Chocolate", 3)
+	 * "ChoChC" repeatFront("Ice Cream", 2) "IcI"
+	 */
+
+	public String repeatFront(String str, int n) {
+
+		String res = "";
+		if (str == "")
+			return str;
+
+		for (int i = 0; i < n; i++) {
+			res = res + str.substring(0, n);
 		}
-	/**Given a string, consider the prefix string made of the first N chars of the string. Does that prefix string appear somewhere else in the string? Assume that the string is not empty and that N is in the range 1..str.length().
 
-prefixAgain("abXYabc", 1) true
-prefixAgain("abXYabc", 2) true
-prefixAgain("abXYabc", 3) false*/
+		return res;
 
-	
+	}
+
+	/**
+	 * Given two strings, word and a separator, return a big string made of
+	 * count occurences of the word, separated by the separator string.
+	 * 
+	 * repeatSeparator("Word", "X", 3) "WordXWordXWord" repeatSeparator("This",
+	 * "And", 2) "ThisAndThis" repeatSeparator("This", "And", 1) "This"
+	 */
+
+	public String repeatSeparator(String word, String sep, int count) {
+		String result = "";
+		for (int i = 0; i < count; i++) {
+			if (i + 1 == count) {
+				result += word;
+			} else {
+				result += (word + sep);
+			}
+		}
+		return result;
+	}
+
+	/**
+	 * Given a string, consider the prefix string made of the first N chars of
+	 * the string. Does that prefix string appear somewhere else in the string?
+	 * Assume that the string is not empty and that N is in the range
+	 * 1..str.length().
+	 * 
+	 * prefixAgain("abXYabc", 1) true prefixAgain("abXYabc", 2) true
+	 * prefixAgain("abXYabc", 3) false
+	 */
+
 	public boolean prefixAgain(String str, int n) {
 
-		String s= str.substring(0,n);
-		if(str.length() == 2 && Character.toString(str.charAt(0)).equals(Character.toString(str.charAt(1)))) {
-		return true;
+		String s = str.substring(0, n);
+		if (str.length() == 2
+				&& Character.toString(str.charAt(0)).equals(
+						Character.toString(str.charAt(1)))) {
+			return true;
 		}
 
-		for(int i=n;i <str.length()-n; i++)
-		{
-		 if((str.substring(i,i+n)).equals (s))
-		 return true;
+		for (int i = n; i < str.length() - n; i++) {
+			if ((str.substring(i, i + n)).equals(s))
+				return true;
 		}
 
+		return false;
 
-		 return false;
-		  
+	}
+
+	/**
+	 * 
+	 * wordEnds("abcXY123XYijk", "XY") → "c13i" wordEnds("XY123XY", "XY") → "13"
+	 * wordEnds("XY1XY", "XY") → "11"
+	 */
+
+	public String wordEnds(String str, String word) {
+		int position = str.indexOf(word);
+		String res = "";
+		while (position != -1) {
+			if (position != 0) {
+				res += str.charAt(position - 1);
+			}
+
+			if (position + word.length() == str.length())
+				break;
+
+			res += str.charAt(position + word.length());
+			position = str.indexOf(word, position + 1);
 		}
+		return res;
+
+	}
+	/**
+	getSandwich("breadjambread") → "jam"
+	getSandwich("xxbreadjambreadyy") → "jam"
+	getSandwich("xxbreadyy") → ""
+	*/
+
+	public String getSandwich(String str) {
+		int len = str.length();
+		String tmpString = "";
+		String finalString = "";
+		int start = 0;
+		int finish = 0;
+		boolean found = false;
+
+		if (len <= 10)
+			return "";
+
+		for (int i = 0; i < len - 4; i++) {
+			tmpString = str.substring(i, i + 5);
+
+			if (tmpString.equals("bread") && found == true)
+				finish = i;
+
+			if (tmpString.equals("bread") && found == false) {
+				start = i + 5;
+				found = true;
+			}
+		}
+		finalString = str.substring(start, finish);
+		return finalString;
+
+	}
 
 }
