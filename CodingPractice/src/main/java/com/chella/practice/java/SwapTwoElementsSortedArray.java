@@ -9,7 +9,11 @@ public class SwapTwoElementsSortedArray {
 		sortByOneSwap(arr, n);
 
 	}
-
+/*
+ * Input:  arr[] = {10, 20, 60, 40, 50, 30}  
+// 30 and 60 are swapped
+Output: arr[] = {10, 20, 30, 40, 50, 60}
+ */
 	public static void sortByOneSwap(int arr[], int n) {
 		// Travers the given array from rightmost side
 		for (int i = n - 1; i > 0; i--) {

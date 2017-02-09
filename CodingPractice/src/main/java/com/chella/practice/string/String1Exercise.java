@@ -1,7 +1,7 @@
 package com.chella.practice.string;
 
-
-
+import java.util.HashMap;
+import java.util.Map;
 
 public class String1Exercise {
 	
@@ -12,9 +12,11 @@ public class String1Exercise {
 	 
 	 String test="chellacc";
 	 System.out.println(test.indexOf('c',0));
+	 String[] con = {"Chella", "venkat", "Deekshi"};
 	 
-	
+	s.consecutiveChars(con);
 	}
+	
 	
 	//Given a string name, e.g. "Bob", return a greeting of the form "Hello Bob!".
 	public String helloName (String name)
@@ -22,6 +24,31 @@ public class String1Exercise {
 		name = "Chella";
 		System.out.println("Hello " + name );
 		return "Hello " + name; 
+	}
+	
+	public void consecutiveChars(String[] conchars)
+	{
+		
+		
+		
+		//Map<Character, Integer> map = new HashMap<Character, Integer>();
+		
+		for(int i=0; i<conchars.length; i++)
+		{
+			String  s= conchars[i];
+			char[]  ch = s.toCharArray();
+			for(int j=0; j<s.length()-1; j++)
+			{
+				if(ch[j] ==( ch[j+1]))
+				{
+					System.out.println(s);
+					break;
+				}
+			
+			}
+			
+		}
+			
 	}
 
 	

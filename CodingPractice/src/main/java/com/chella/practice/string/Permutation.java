@@ -6,7 +6,7 @@ public class Permutation {
 		Permutation pm= new Permutation();
 		pm.dopermute("","ABC");
 		String x="ABC";
-		System.out.println(x.substring(0,0));
+		System.out.println("0,0" + x.substring(0,0));
 		System.out.println(x.substring(1, x.length()));
 		String s = "ABC";
 		System.out.println("Hello" + s.substring(0,0));

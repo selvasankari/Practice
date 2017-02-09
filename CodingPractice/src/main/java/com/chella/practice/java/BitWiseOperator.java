@@ -5,7 +5,10 @@ public class BitWiseOperator {
 	public static void main(String args[])
 	{
 	int a =5;
+	
+	// << left shift
 	System.out.println(a<<2);
+	System.out.println(a<<3);
 	toBinary(a<<2);
 	toBinary(4<<2);
 	int number =-8;
@@ -16,6 +19,11 @@ public class BitWiseOperator {
 	number = number >>>1;
 	System.out.println(number);
 	toBinary(number);
+	System.out.println("signed bit examples");
+	  int x = -4;
+      toBinary(x>>1);   
+      int y = 4;
+      toBinary(y>>1);  
 	
 	}
 	

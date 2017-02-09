@@ -1,7 +1,10 @@
 package com.chella.practice.java;
 
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Map;
+import java.util.Set;
 
 public class MissingNumber {
 
@@ -12,6 +15,9 @@ public class MissingNumber {
 		//mn.reversearray(arr);
 		mn.findTwoSmallest(arr);
 		mn.squareNumber(arr);
+		
+		int arr1[]= { 2,3,4,2,5,5,6};
+		mn.duplicateNumber(arr1);
 		
 
 	}
@@ -73,6 +79,27 @@ public class MissingNumber {
 	return arr.map(x => x*x);
 }*/
 		 
+	}
+	
+	public void duplicateNumber(int arr[])
+	{
+		Set <Integer> set = new HashSet<Integer>();		
+		System.out.println("Duplicates : ");
+		for(int i=0; i<arr.length; i++)
+		{
+			if(set.contains(arr[i]))
+				System.out.println(arr[i]);
+			else			
+				set.add(arr[i]);
+		}
+		
+Iterator ite= set.iterator();
+System.out.println(" Removed Duplicates : ");
+while(ite.hasNext())
+{
+	
+	System.out.println(ite.next());
+}
 	}
 
 }

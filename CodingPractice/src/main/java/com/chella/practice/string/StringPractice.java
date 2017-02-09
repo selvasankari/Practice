@@ -1,5 +1,7 @@
 package com.chella.practice.string;
 
+import java.util.List;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -56,6 +58,7 @@ public class StringPractice {
 
 		// Pair Strings
 		String pairString = "abc cdb cba ssfsd bdc addfdfd";
+		System.out.println("Pair strings");
 		obj.pairStrings(pairString);
 		
 		System.out.println("map");
@@ -97,6 +100,33 @@ public class StringPractice {
 		
 		
 
+	}
+	
+	public void firstNonRepetitiveChar(String str)
+	{
+		int len = str.length();
+		Set <Character> repeating = new HashSet<Character>();
+		List <Character> nonrepeating = new ArrayList<Character>();
+		for(char ch : str.toCharArray())
+		{
+		
+			if(repeating.contains(ch))		
+			{
+				continue;
+			}
+			else
+			{
+				if(nonrepeating.contains(ch))
+				{
+					nonrepeating.remove(ch);
+					repeating.add(ch);
+				}
+				else
+					nonrepeating.add(ch);
+			}
+			nonrepeating.get(0);
+			
+		}
 	}
 	
 	public Map<String, String> firstChar(String[] strings) {

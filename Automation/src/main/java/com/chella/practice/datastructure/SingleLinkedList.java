@@ -1,13 +1,13 @@
 package com.chella.practice.datastructure;
-public class LinkedList {
+public class SingleLinkedList {
 	int data;
-	LinkedList next;
+	SingleLinkedList next;
 
-	public LinkedList(int data) {
+	public SingleLinkedList(int data) {
 		this.data = data;
 	}
 
-	public LinkedList(int data, LinkedList next) {
+	public SingleLinkedList(int data, SingleLinkedList next) {
 		this.data = data;
 		this.next = next;
 	}
@@ -15,7 +15,7 @@ public class LinkedList {
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
-		LinkedList start = this;
+		SingleLinkedList start = this;
 		while (start != null) {
 			sb.append(start.data);
 			if (this.next != null) {
@@ -28,32 +28,32 @@ public class LinkedList {
 	}
 
 	public static void main(String args[]) {
-		LinkedList startNode = new LinkedList(1);
-		startNode.next = new LinkedList(2, new LinkedList(3));
-		startNode.next.next.next = new LinkedList(4);
+		SingleLinkedList startNode = new SingleLinkedList(1);
+		startNode.next = new SingleLinkedList(2, new SingleLinkedList(3));
+		startNode.next.next.next = new SingleLinkedList(4);
 		// LinkedList list = new LinkedList(1, new LinkedList(2, new
 		// LinkedList(3)));
 		// printList(startNode);
 		// System.out.println(startNode);
 
 		// Add at the beginning
-		LinkedList insertAtBeginList = insertionAtBegin(startNode, 5);
+		SingleLinkedList insertAtBeginList = insertionAtBegin(startNode, 5);
 		System.out.println(insertAtBeginList);
 
 		// Add at the end
-		LinkedList insertAtEndList = insertionAtEnd(startNode, 6);
+		SingleLinkedList insertAtEndList = insertionAtEnd(startNode, 6);
 		System.out.println(insertAtEndList);
 
 		// Add at the middle
-		LinkedList insertATMiddle = insertionAtMiddle(startNode, 7, 3);
+		SingleLinkedList insertATMiddle = insertionAtMiddle(startNode, 7, 3);
 		System.out.println(insertATMiddle);
 
 		
-		LinkedList s= reverseList(startNode, 2, 4);
+		SingleLinkedList s= reverseList(startNode, 2, 4);
 		System.out.println(s);
 		
 		// Deletion
-		LinkedList deletionList = deletion(insertATMiddle, 1);
+		SingleLinkedList deletionList = deletion(insertATMiddle, 1);
 		System.out.println(deletionList);
 
 		// Search for the position for the given data
@@ -76,11 +76,11 @@ public class LinkedList {
 
 		// Forming Loop in Linked List
 
-		LinkedList loopLinkedList = new LinkedList(1);
-		loopLinkedList.next = new LinkedList(2);
-		loopLinkedList.next.next = new LinkedList(3);
-		loopLinkedList.next.next.next = new LinkedList(4);
-		loopLinkedList.next.next.next.next = new LinkedList(5);
+		SingleLinkedList loopLinkedList = new SingleLinkedList(1);
+		loopLinkedList.next = new SingleLinkedList(2);
+		loopLinkedList.next.next = new SingleLinkedList(3);
+		loopLinkedList.next.next.next = new SingleLinkedList(4);
+		loopLinkedList.next.next.next.next = new SingleLinkedList(5);
 		loopLinkedList.next.next.next.next.next = loopLinkedList.next.next.next;
 		
 		System.out.println("Detecting loop");
@@ -97,17 +97,17 @@ public class LinkedList {
 		// insertion in sorting order
 		System.out.println("sorting Oder List " + insertionInSortedOrder(insertAtEndList, 2));
 		
-		LinkedList deletenode = new LinkedList(1);
-		deletenode.next=new LinkedList(2);
-		deletenode.next.next= new LinkedList(3);
-		deletenode.next.next= new LinkedList(4);
+		SingleLinkedList deletenode = new SingleLinkedList(1);
+		deletenode.next=new SingleLinkedList(2);
+		deletenode.next.next= new SingleLinkedList(3);
+		deletenode.next.next= new SingleLinkedList(4);
 		deleteNode(deletenode.next.next);
 		
 		//Delete Duplicates
-		LinkedList deleDuplicates = new LinkedList(1);
-		deleDuplicates.next= new LinkedList(2);
-		deleDuplicates.next.next= new LinkedList(2);
-		deleDuplicates.next.next.next= new LinkedList(3);
+		SingleLinkedList deleDuplicates = new SingleLinkedList(1);
+		deleDuplicates.next= new SingleLinkedList(2);
+		deleDuplicates.next.next= new SingleLinkedList(2);
+		deleDuplicates.next.next.next= new SingleLinkedList(3);
 		
 		System.out.println("Deletion Duplicates ");
 		
@@ -117,9 +117,9 @@ public class LinkedList {
 		
 	}
 	
-	public static LinkedList deleteDuplicates(LinkedList head)
+	public static SingleLinkedList deleteDuplicates(SingleLinkedList head)
 	{
-		LinkedList q = head;
+		SingleLinkedList q = head;
 		while(q!=null && q.next!= null)
 		{
 			if(q.data == q.next.data)
@@ -135,10 +135,10 @@ public class LinkedList {
 		return q;
 	}
 
-	public static LinkedList insertionInSortedOrder(LinkedList head, int value) {
-		LinkedList newlist = new LinkedList(value);
-		LinkedList temp= null;
-		LinkedList current = head;
+	public static SingleLinkedList insertionInSortedOrder(SingleLinkedList head, int value) {
+		SingleLinkedList newlist = new SingleLinkedList(value);
+		SingleLinkedList temp= null;
+		SingleLinkedList current = head;
 
 		if (head == null && head.data == value) {
 			newlist.data = value;
@@ -163,9 +163,9 @@ public class LinkedList {
 
 	}
 
-	public static int nthNodeFromEnd(LinkedList head, int n) {
-		LinkedList mainPtr = head;
-		LinkedList refPtr = head;
+	public static int nthNodeFromEnd(SingleLinkedList head, int n) {
+		SingleLinkedList mainPtr = head;
+		SingleLinkedList refPtr = head;
 		int count = 1;
 		while (refPtr.next != null && count < n) {
 			refPtr = refPtr.next;
@@ -181,11 +181,11 @@ public class LinkedList {
 	}
 	
 	// Reverse Linked List in the given 
-	public static LinkedList reverseList (LinkedList head, int m , int n)
+	public static SingleLinkedList reverseList (SingleLinkedList head, int m , int n)
 	{
-		LinkedList prev= null;
-		LinkedList first =null;
-		LinkedList ftemp = head;
+		SingleLinkedList prev= null;
+		SingleLinkedList first =null;
+		SingleLinkedList ftemp = head;
 		int pos =0;
 		
 		while(ftemp !=null && pos<m)
@@ -195,10 +195,10 @@ public class LinkedList {
 		}
 		
 		
-		LinkedList current = null;
-		LinkedList temp = first;
+		SingleLinkedList current = null;
+		SingleLinkedList temp = first;
 		while (first != null && pos <n) {
-			current = new LinkedList(first.data);
+			current = new SingleLinkedList(first.data);
 			current.next = prev;
 			prev = current;
 			first = first.next;
@@ -227,18 +227,18 @@ public class LinkedList {
 	 * @return
 	 */
 	
-	public static void deleteNode(LinkedList node)
+	public static void deleteNode(SingleLinkedList node)
 	{
 		node.data= node.next.data;
 		node.next= node.next.next;
 	}
 	// 1->2->3
-	public static LinkedList reverseLinkedList(LinkedList head) {
-		LinkedList prev = null;
-		LinkedList temp = head;
-		LinkedList current = null;
+	public static SingleLinkedList reverseLinkedList(SingleLinkedList head) {
+		SingleLinkedList prev = null;
+		SingleLinkedList temp = head;
+		SingleLinkedList current = null;
 		while (temp != null) {
-			current = new LinkedList(temp.data);
+			current = new SingleLinkedList(temp.data);
 			current.next = prev;
 			prev = current;
 			temp = temp.next;
@@ -248,9 +248,9 @@ public class LinkedList {
 
 	}
 
-	public static void detectloop(LinkedList head) {
-		LinkedList fastPtr = head;
-		LinkedList slowPtr = head;
+	public static void detectloop(SingleLinkedList head) {
+		SingleLinkedList fastPtr = head;
+		SingleLinkedList slowPtr = head;
 
 		while (fastPtr.next.next != null && slowPtr.next != null) {
 			if (fastPtr == slowPtr) {
@@ -262,7 +262,7 @@ public class LinkedList {
 		}
 	}
 
-	public static LinkedList deleteuUsingPtr(LinkedList next) {
+	public static SingleLinkedList deleteuUsingPtr(SingleLinkedList next) {
 
 		next.data = next.next.data;
 		next.next = next.next.next;
@@ -270,10 +270,10 @@ public class LinkedList {
 		return next;
 	}
 
-	public static int middleOfLinkedList(LinkedList head) {
+	public static int middleOfLinkedList(SingleLinkedList head) {
 
-		LinkedList fastPtr = head;
-		LinkedList slowPtr = head;
+		SingleLinkedList fastPtr = head;
+		SingleLinkedList slowPtr = head;
 
 		if (head != null) {
 			while (fastPtr.next.next != null && slowPtr != null) {
@@ -284,7 +284,7 @@ public class LinkedList {
 		return slowPtr.data;
 	}
 
-	public static int searchPostion(LinkedList head, int data) {
+	public static int searchPostion(SingleLinkedList head, int data) {
 		int position = 0;
 
 		while (head != null) {
@@ -299,7 +299,7 @@ public class LinkedList {
 
 	}
 
-	public static void printList(LinkedList list) {
+	public static void printList(SingleLinkedList list) {
 		while (list != null) {
 			System.out.print(list.data);
 			if (list.next != null)
@@ -308,14 +308,14 @@ public class LinkedList {
 		}
 	}
 
-	public static LinkedList deletion(LinkedList head, int data) {
+	public static SingleLinkedList deletion(SingleLinkedList head, int data) {
 
 		if (head.data == data) {
 			head = head.next;
 			return head;
 		}
-		LinkedList q = head;
-		LinkedList prev = q;
+		SingleLinkedList q = head;
+		SingleLinkedList prev = q;
 		while (q != null) {
 			if (q.data == data) {
 				prev.next = q.next;
@@ -326,11 +326,11 @@ public class LinkedList {
 		return head;
 	}
 
-	public static LinkedList insertionAtMiddle(LinkedList list, int data,
+	public static SingleLinkedList insertionAtMiddle(SingleLinkedList list, int data,
 			int afterpos) {
-		LinkedList newlist = list;
+		SingleLinkedList newlist = list;
 		if (list == null) {
-			newlist = new LinkedList(data, null);
+			newlist = new SingleLinkedList(data, null);
 		}
 
 		//int position = 0;
@@ -339,7 +339,7 @@ public class LinkedList {
 			//position++;
 		}
 
-		LinkedList temp = new LinkedList(data);
+		SingleLinkedList temp = new SingleLinkedList(data);
 		//temp.next = list.next.next;
 		temp.next = list;
 		list.next = temp;
@@ -347,29 +347,29 @@ public class LinkedList {
 		return newlist;
 	}
 
-	public static LinkedList insertionAtBegin(LinkedList list, int data) {
-		LinkedList newlist = null;
+	public static SingleLinkedList insertionAtBegin(SingleLinkedList list, int data) {
+		SingleLinkedList newlist = null;
 
 		if (list == null) {
-			newlist = new LinkedList(data);
+			newlist = new SingleLinkedList(data);
 			newlist.next = null;
 		} else {
-			newlist = new LinkedList(data, list);
+			newlist = new SingleLinkedList(data, list);
 		}
 		return newlist;
 	}
 
-	public static LinkedList insertionAtEnd(LinkedList list, int data) {
-		LinkedList newlist = list;
+	public static SingleLinkedList insertionAtEnd(SingleLinkedList list, int data) {
+		SingleLinkedList newlist = list;
 		if (list == null) {
-			newlist = new LinkedList(data);
+			newlist = new SingleLinkedList(data);
 			newlist.next = null;
 		} else {
 			while (list.next != null) {
 				list = list.next;
 
 			}
-			list.next = new LinkedList(data, null);
+			list.next = new SingleLinkedList(data, null);
 		}
 		return newlist;
 	}

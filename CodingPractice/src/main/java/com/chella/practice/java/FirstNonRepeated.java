@@ -4,7 +4,9 @@ package com.chella.practice.java;
 import java.util.Hashtable;
 import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Scanner;
+import java.util.Set;
 
 
 public class FirstNonRepeated {
@@ -84,12 +86,14 @@ public class FirstNonRepeated {
           else
           {
           
-          Map.Entry<Character, Integer> entry =map.entrySet();
+         //Set<Entry<Character, Integer>> entry =map.entrySet();
+          Map.Entry<Character, Integer> en= (Entry<Character, Integer>) map.entrySet();
           
-          char firstchar =entry.getKey();
-          int index = entry.getValue();
+          
+        //  char firstchar =entry.getKey();
+         //s int index = entry.getValue();
        
-          return index ;
+          return 0 ;
           }
         
     }

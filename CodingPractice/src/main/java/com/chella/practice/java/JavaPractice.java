@@ -323,7 +323,7 @@ public class JavaPractice {
 		
 
 	}
-
+// result should contain unique element
 	public int[] intersection(int[] nums1, int[] nums2) {
 
 		HashSet<Integer> set1 = new HashSet<Integer>();

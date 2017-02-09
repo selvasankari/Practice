@@ -13,7 +13,7 @@ public class ExceptionHandling {
 		}
 		
 		catch(ArithmeticException exception)
-		{
+{
 			System.out.println("catch block");
 			System.out.println(exception.getMessage());
 		}

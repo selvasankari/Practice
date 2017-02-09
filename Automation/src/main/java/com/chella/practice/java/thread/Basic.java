@@ -4,7 +4,7 @@ public class Basic {
 
 	public static void main(String args[]) {
 		Basic b= new Basic();
-		b.sleepMethod();
+		//b.sleepMethod();
 		b.isAliveMethod();
 		b.joinMethod();
 		
@@ -19,7 +19,8 @@ public void sleepMethod()
 	t.start();
 	
 	try {
-		Thread.sleep(1000);
+		Thread.sleep(0);
+		System.out.println("");
 	} catch (InterruptedException e) {
 
 	}

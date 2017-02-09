@@ -82,7 +82,7 @@ public class StringPractice {
 		StringBuilder sb = new StringBuilder();
 		String[] split = str.split("\\s+");
 		int size = split.length;
-
+System.out.println("reverseWordPosition");
 		for (int i = 0; i < size; i++) {
 			// System.out.println(split[size-i-1]);
 			sb.append(split[size - 1 - i]).append(" ");

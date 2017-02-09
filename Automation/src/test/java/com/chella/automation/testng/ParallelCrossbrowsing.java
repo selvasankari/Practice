@@ -31,7 +31,8 @@ public class ParallelCrossbrowsing {
 	  else if(browser.equalsIgnoreCase("Chrome"))	
 	  {
 		  System.out.println(browser);
-		  System.setProperty("webdriver.chrome.driver","C:\\Users\\Selvasankari\\Downloads\\chromedriver_win32\\chromedriver.exe");
+		  // For Windows : System.setProperty("webdriver.chrome.driver","C:\\Users\\Selvasankari\\Downloads\\chromedriver_win32\\chromedriver.exe");
+		  System.setProperty("webdriver.chrome.driver","/Users/chella/Downloads/chromedriver");
 		  System.out.println("******"+browser);
 		  driver = new ChromeDriver();
 		  System.out.println("******"+browser);
